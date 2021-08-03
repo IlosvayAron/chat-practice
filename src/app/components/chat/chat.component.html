@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="contacts">
+    <div id="buttons_block">
+      <button mat-button class="group"><mat-icon>groups</mat-icon>Csoport</button>
+      <button mat-button class="private"><mat-icon>person</mat-icon>Privát</button>
+    </div>
+    <div id="search_field" >
+      <div class="box">
+        <mat-icon class="left_icon">search</mat-icon>
+        <input type="text" value="Keresés...">
+      </div>
+      <mat-icon>person_add</mat-icon>
+    </div>
+    <div id="people" >
+      <div class="kincso" *ngFor="let k of kincso">
+        <mat-icon [svgIcon]="k.profile"></mat-icon>
+        <div class="main_container">
+          <h2>{{ k.name }}</h2>
+          <div class="message_container">
+            <p>{{ k.message }}</p>
+            <p>{{ k.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="peter" *ngFor="let p1 of peter_1">
+        <mat-icon [svgIcon]="p1.profile"></mat-icon>
+        <div class="peter_container">
+          <h2>{{ p1.name }}</h2>
+          <div class="peter_message">
+            <p id="pm">{{ p1.message }}</p>
+            <p>{{ p1.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="person" *ngFor="let r of reka">
+        <mat-icon [svgIcon]="r.profile"></mat-icon>
+        <div class="main_container">
+          <h2>{{ r.name }}</h2>
+          <div class="message_container">
+            <p>{{ r.message }}</p>
+            <p>{{ r.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="person" *ngFor="let e of emma">
+        <mat-icon [svgIcon]="e.profile"></mat-icon>
+        <div class="main_container">
+          <h2>{{ e.name }}</h2>
+          <div class="message_container">
+            <p>{{ e.message }}</p>
+            <p>{{ e.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="peter" *ngFor="let p2 of peter_2">
+        <mat-icon [svgIcon]="p2.profile"></mat-icon>
+        <div class="peter_container">
+          <h2>{{ p2.name }}</h2>
+          <div class="peter_message">
+            <p id="pm">{{ p2.message }}</p>
+            <p>{{ p2.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="person" *ngFor="let k1 of karoly_1">
+        <mat-icon [svgIcon]="k1.profile"></mat-icon>
+        <div class="main_container">
+          <h2>{{ k1.name }}</h2>
+          <div class="message_container">
+            <p>{{ k1.message }}</p>
+            <p>{{ k1.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="person" *ngFor="let k2 of karoly_2">
+        <mat-icon [svgIcon]="k2.profile"></mat-icon>
+        <div class="main_container">
+          <h2>{{ k2.name }}</h2>
+          <div class="message_container">
+            <p>{{ k2.message }}</p>
+            <p>{{ k2.time }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="chat_window">
+    <mat-toolbar class="toolbar">
+      <div class="profile_box">
+        <mat-icon svgIcon="kincso" class="profile"></mat-icon>
+        <h3>Nemes Kincső</h3>
+      </div>
+      <div class="icons_block">
+        <mat-icon>call</mat-icon>
+        <mat-icon>videocam</mat-icon>
+        <mat-icon>desktop_windows</mat-icon>
+        <mat-icon svgIcon="svg_folder"></mat-icon>
+        <mat-icon>feed</mat-icon>
+        <mat-icon>replay</mat-icon>
+        <mat-icon>calendar_today</mat-icon>
+        <mat-icon>info</mat-icon>
+      </div>
+    </mat-toolbar>
+    <div [ngSwitch]="showConversation" id="content">
+      <div *ngSwitchCase=false class="message">
+        <mat-icon  svgIcon="message_bg" class="message_picture"></mat-icon>
+      </div>
+      <div *ngSwitchCase=true class="conversation">
+        <div class="time"><p>19:38</p></div>
+        <div class="box_one">
+          <mat-icon svgIcon="kincso"></mat-icon>
+          <div class="first" *ngFor="let first of first_message">{{first.text}}</div>
+        </div>
+        <div class="second" *ngFor="let second of second_message">
+          {{second.text}}
+        </div>
+        <div class="box_three">
+          <mat-icon svgIcon="kincso"></mat-icon>
+          <div class="third" *ngFor="let third of third_message">{{third.text}}</div>
+        </div>
+        <div class="box_four">
+          <mat-icon svgIcon="kincso"></mat-icon>
+          <div class="fourth" *ngFor="let fourth of fourth_message">{{fourth.text}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="message_field">
+      <button mat-icon-button [ngSwitch]="showMe" (click)="toggleMenu()" class="mat_icon_box">
+        <mat-icon *ngSwitchCase=false class="mat_icon">pending</mat-icon>
+        <mat-icon *ngSwitchCase=true class="mat_icon">cancel</mat-icon>
+      </button>
+      <div *ngIf="showMe" class="menu">
+        <button mat-stroked-button><mat-icon>photo_library</mat-icon> Képek/Videók</button>
+        <button mat-stroked-button><mat-icon class="attach_file">attach_file</mat-icon> Csatolmányok</button>
+        <button mat-stroked-button><mat-icon>mic</mat-icon> Hangfelvétel</button>
+        <button mat-stroked-button><mat-icon svgIcon="sticker"></mat-icon> Matricák</button>
+        <button mat-stroked-button><mat-icon>gif</mat-icon> Gifek</button>
+      </div>
+      <div *ngIf="!showMe" class="send_box">
+        <input  type="text">
+        <button mat-icon-button (click)="toggleConversation()"><mat-icon class="send">send</mat-icon></button>
+      </div>
+      <button mat-icon-button *ngIf="!showMe" class="mood"><mat-icon class="mat_icon">mood</mat-icon></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,415 @@
+.container{
+  display: flex;
+  padding: 5px 0;
+  height: 95%;
+
+
+  .contacts{
+    width: 25%;
+
+    #buttons_block{
+      display: flex;
+      color: #FFF;
+      padding: 2%;
+      height: 7%;
+
+
+      .group{
+        border: none;
+        background: #BFBFBF;
+        width: 50%;
+        margin-right: 2%;
+      }
+
+      .private{
+        border: none;
+        background: #006633;
+        width: 50%;
+      }
+    }
+
+
+    #search_field{
+      width: 100%;
+      height: 5%;
+      padding: 2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .box{
+        display: flex;
+        align-items: center;
+        background: #B1DDC4;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 1%;
+        width: 90%;
+
+        & > input{
+          background: #B1DDC4;
+          border: none;
+          padding: 2%;
+          font-size: 1rem;
+          width: 100%;
+        }
+
+        & + mat-icon{
+         color: #006633;
+         width: 10%;
+         text-align: center;
+         font-size:  2rem;
+        }
+      }
+    }
+
+
+    #people{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 88%;
+      padding: 16px 0;
+
+      .kincso, .person, .peter{
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        height: 20%;
+        padding-left: 5px;
+      }
+
+      & > .person > mat-icon, & > .peter > mat-icon, & > .kincso > mat-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 2%;
+      }
+
+      .main_container, .peter_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        & > h2{
+          margin: 0;
+        }
+      }
+
+      .message_container, .peter_message{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+
+        & > p{
+          margin: 0;
+          font-size: 0.9rem
+        }
+      }
+
+      .kincso{
+        background: #E5E5E5;
+
+        & > mat-icon{
+          border: 4px solid #363636;
+          border-radius: 50%;
+        }
+      }
+
+      .peter{
+        background: #B1DDC4;
+
+        .peter_message{
+          color: #006633;
+
+          #pm{
+            font-weight: bold;
+          }
+
+        }
+      }
+    }
+  }
+
+  .chat_window{
+    width: 75%;
+    padding: 5px;
+
+    .toolbar{
+      padding: 0 10px;
+      background: none;
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+      color: #006633;
+      height: 10%;
+
+      .profile_box{
+        width: 30%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+
+        .profile{
+          width: 64px;
+          height: 64px;
+          margin-right: 0.5rem;
+
+          & + h3 {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .icons_block{
+        width: 30%;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    #content{
+      height: 80%;
+    }
+
+    .message{
+      background: #B1DDC4;
+      border-radius: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+      margin: 0.5% 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      &_picture{
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+
+    .conversation{
+      background: #B1DDC4;
+      border-radius: 1rem;
+      margin: 0.5% 0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 15%;
+      position: relative;
+      height: 100%;
+
+      .time{
+        color: #006633;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .box_one{
+        display: flex;
+        width: 100%;
+        position: absolute;
+        left: 1%;
+        bottom: 45%;
+
+        & > mat-icon{
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+
+      .first{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-left: 5px;
+        background: #006633;
+        color: #FFF;
+        border-radius: 0px 24px 24px 24px;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.24), 0px 2px 4px rgba(0, 0, 0, 0.16), 0px -1px 1px rgba(0, 0, 0, 0.08);
+        width: 20%;
+      }
+
+      .second{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 5px;
+        position: absolute;
+        right: 1%;
+        bottom: 30%;
+        background: #363636;
+        color: #FFF;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.24), 0px 2px 4px rgba(0, 0, 0, 0.16), 0px -1px 1px rgba(0, 0, 0, 0.08);
+        border-radius: 24px 0px 24px 24px;
+        width: 20%;
+      }
+
+      .box_three{
+        display: flex;
+        width: 100%;
+        position: absolute;
+        left: 1%;
+        bottom: 17%;
+
+        & > mat-icon{
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+
+      .third{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-left: 5px;
+        background: #006633;
+        color: #FFF;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.24), 0px 2px 4px rgba(0, 0, 0, 0.16), 0px -1px 1px rgba(0, 0, 0, 0.08);
+        border-radius: 0px 24px 24px 24px;
+        width: 65%;
+      }
+
+      .box_four{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 5%;
+        right: 1%;
+        width: 40%;
+
+        & > mat-icon{
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      .fourth{
+        display: flex;
+        padding: 5px;
+        margin-top: 5px;
+        background: #363636;
+        color: #FFF;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.24), 0px 2px 4px rgba(0, 0, 0, 0.16), 0px -1px 1px rgba(0, 0, 0, 0.08);
+        border-radius: 24px 0px 24px 24px;
+        width: 100%;
+      }
+    }
+
+    .message_field{
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center ;
+      color: #006633;
+
+      .mat_icon_box, .mood{
+        width: 2%;
+
+        .mat_icon{
+          font-size: 2rem;
+        }
+      }
+
+
+      .send_box{
+        display: flex;
+        align-items: center;
+        width: 94%;
+        margin: 0 1%;
+        padding: 0 0.5%;
+        border-radius: 10px;
+        border: none;
+        background: #B1DDC4;
+
+         & > input{
+           background: #B1DDC4;
+           border: none;
+           border-radius: 10px;
+           padding: 5px;
+           font-size: 1rem;
+           width: 100%;
+         }
+
+        .send{
+          font-size: 1.8rem;
+        }
+
+      }
+    }
+
+
+    .menu{
+      display: flex;
+      color: #FFF;
+      width: 100%;
+      justify-content: space-between;
+      margin-left: 29px;
+
+      & > button{
+        background: #006633;
+        width: 19%;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .mood{
+    display: none;
+  }
+
+  .menu button{
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .toolbar{
+    flex-direction: column;
+    height: 20%;
+
+    .profile_box{
+      width: 100%;
+    }
+  }
+
+  #content{
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #buttons_block{
+    display: none;
+  }
+
+  .menu button{
+    width: 10%;
+    font-size: 5px;
+  }
+
+}
+
+// @media only screen and (min-width: 300px) and (max-width: 1000px){
+//   .toolbar{
+//     flex-direction: column;
+//     height: 50%;
+//   }
+// }
